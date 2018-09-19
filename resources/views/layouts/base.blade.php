@@ -149,69 +149,9 @@
                 }
                 ?>
 
-                <div class="img-rounded" style="border: 2px solid #204d74; margin-bottom: 50px; padding: 10px;">
-                    <ol class="myMenu no-padding" style="background-color: white; margin-bottom: 0px">
-
-                        <li class="<?php if ($menu == 1) {
-                            echo 'active';
-                        } ?>">
-                            <?php if($menu != 1){?><a href="/"><i class="glyphicon glyphicon-home"></i> Home</a>
-                            <?php }else{ ?> <i class="glyphicon glyphicon-home"></i> Home <?php } ?>
-                        </li>
-                        <li class="<?php if ($menu == 2) {
-                            echo 'active';
-                        } ?>">
-                            <?php if($menu != 2){?><a href="/"><i class="glyphicon glyphicon-phone"></i> Forum</a>
-                            <?php }else{ ?> <i class="glyphicon glyphicon-phone"></i> Forum <?php } ?>
-                        </li>
-                        <li class="<?php if ($menu == 3) {
-                            echo 'active';
-                        } ?>">
-                            <?php if($menu != 3){?><a href="/"><i class="glyphicon glyphicon-folder-open"></i> Deck</a>
-                            <?php }else{ ?> <i class="glyphicon glyphicon-folder-open"></i> Deck <?php } ?>
-                        </li>
-                        <li class="<?php if ($menu == 4) {
-                            echo 'active';
-                        } ?>">
-                            <?php if($menu != 4){?><a href="/"><i class="glyphicon glyphicon-user"></i> About Us</a>
-                            <?php }else{ ?> <i class="glyphicon glyphicon-user"></i> About Us <?php } ?>
-                        </li>
-                        <li class="<?php if ($menu == 5) {
-                            echo 'active';
-                        } ?>">
-                            <?php if($menu != 5){?><a href="/contact"><i class="glyphicon glyphicon-envelope"></i>
-                                Contact Us</a>
-                            <?php }else{ ?> <i class="glyphicon glyphicon-envelope"></i> Contact Us <?php } ?>
-                        </li>
-                        <li class="<?php if ($menu == 6) {
-                            echo 'active';
-                        } ?>">
-                            <?php if($menu != 6){?><a href="/privacy"><i class="glyphicon glyphicon-file"></i>
-                                Privacy</a>
-                            <?php }else{ ?> <i class="glyphicon glyphicon-file"></i> Privacy<?php } ?>
-                        </li>
-                        <li class="<?php if ($menu == 7) {
-                            echo 'active';
-                        } ?>">
-                            <?php if($menu != 7){?><a href="/mosearch"><i class="glyphicon glyphicon-search"></i>
-                                MOSearch</a>
-                            <?php }else{ ?> <i class="glyphicon glyphicon-search"></i> MOSearch<?php } ?>
-                        </li>
-                    </ol>
-                </div>
-
-
                 @yield('content')
 
                 <br/>
-                <!-- <div class="hidden-xs col-sm-4" >&nbsp;</div>
-                 <div class="col-xs-12 col-sm-4" >
-                 <script type="text/javascript" src="http://feedjit.com/serve/?vv=1515&amp;tft=3&amp;dd=0&amp;wid=&amp;pid=0&amp;proid=0&amp;bc=FFFFFF&amp;tc=000000&amp;brd1=012B6B&amp;lnk=135D9E&amp;hc=FFFFFF&amp;hfc=2853A8&amp;btn=C99700&amp;ww=250&amp;wne=10&amp;srefs=1"></script>
-                 <noscript><a href="http://feedjit.com/">Live Traffic Stats</a></noscript>
-               </div>
-                <div class="hidden-xs col-sm-4" >&nbsp;</div>
-                <br/>
-                <br/> -->
                 <br/>
                 <div style="height: 100px; width: 100%; overflow: hidden" class="text-center">
                     <script type="text/javascript"

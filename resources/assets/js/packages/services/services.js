@@ -1,20 +1,20 @@
 import Bot from './bot.service'
 import Users from './users.service'
 import Movies from './movies.service'
-// import Dashboard from './dashboard.service'
-// import Lga from './lga.service'
+import Visitors from './visitors.service'
+import Main from './main.service'
 
 export default function (Vue) {
-    Vue.bot = Bot
+    Vue.bots = Bot
     Vue.users = Users
     Vue.movies = Movies
-    // Vue.dashboard = Dashboard
-    // Vue.lga = Lga
+    Vue.visitors = Visitors
+    Vue.main = Main
 
     Object.defineProperties(Vue.prototype, {
-        $bot: {
+        $bots: {
             get: () => {
-                return Vue.bot
+                return Vue.bots
             }
         },
         $users: {
@@ -27,15 +27,15 @@ export default function (Vue) {
                 return Vue.movies
             }
         },
-        // $dashboard: {
-        //     get: () => {
-        //         return Vue.dashboard
-        //     }
-        // },
-        // $lga: {
-        //     get: () => {
-        //         return Vue.lga
-        //     }
-        // }
+        $visitors: {
+            get: () => {
+                return Vue.visitors
+            }
+        },
+        $main: {
+            get: () => {
+                return Vue.main
+            }
+        },
     })
 }

@@ -13,6 +13,24 @@ use Illuminate\Http\Request;
 |
 */
 
+Route::get('/movies/category/{category}', ['as'=> 'bots', 'uses'=> 'Movies\MoviesController@category']);
+Route::get('/movie/{movie_id}', ['as'=> 'bots', 'uses'=> 'Movies\MoviesController@movie']);
+
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/bots', ['as'=> 'bots', 'uses'=> 'Admin\BotController@movie']);
+
+
+
+
+
+/*
+ * --------------------------------------------------------------------------------------
+ *  VISITORS
+ * --------------------------------------------------------------------------------------
+ */
+
+Route::get('/visitors', ['as'=> 'visitors', 'uses'=> 'Admin\VisitorController@index']);

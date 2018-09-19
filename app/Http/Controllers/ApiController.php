@@ -28,7 +28,7 @@ class ApiController extends Controller{
 
         $movies = MoviesUpload::orderBy('id', 'Desc')
                     ->where('category', $category)
-                    ->paginate(20, ['*'], 'page', $pageNumber);
+                    ->paginate(5000, ['*'], 'page', $pageNumber);
         // dd($rooms);
           return response(['data' => $movies]);
     }

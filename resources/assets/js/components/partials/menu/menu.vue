@@ -39,12 +39,17 @@
                     </li>
                     <li class="treeview">
                         <router-link tag="a" :to="{name: 'visitors'}">
-                            <i class="glyphicon glyphicon-user"></i> <span>Visitors</span>
+                            <i class="fa fa-users"></i> <span>Visitors</span>
+                        </router-link>
+                    </li>
+                    <li class="treeview">
+                        <router-link tag="a" :to="{name: 'bots'}">
+                            <i class="fa fa-crop"></i> <span>Bots</span>
                         </router-link>
                     </li>
                     <li class="treeview">
                         <router-link tag="a" :to="{name: 'crawlers'}">
-                            <i class="glyphicon glyphicon-wrench"></i> <span>Crawlers</span>
+                            <i class="fa fa-crop"></i> <span>Crawlers</span>
                         </router-link>
                     </li>
                     <li class="treeview">

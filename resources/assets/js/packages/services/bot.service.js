@@ -2,9 +2,9 @@ import axios from 'axios'
 
 export default {
     //Student
-    getBots(pageNumber) {
+    getBots() {
         return new Promise((resolve, reject) => {
-            axios.get('/getbots/pagenumber/' + pageNumber)
+            axios.get('/bots/')
                 .then(response => {
                     resolve(response.data)
                 }).catch((error) => {

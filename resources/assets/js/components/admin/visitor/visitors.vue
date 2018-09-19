@@ -1,97 +1,121 @@
 <template>
-    <div class="wrapper-div">
-        <section class="content-header">
-            <h1>
-                <small>&nbsp;</small>
-            </h1>
-            <ol class="breadcrumb">
-                <li><a href="#"><i class="fa fa-dashboard"></i> Admin</a></li>
-                <li class="active">Visitors</li>
-            </ol>
-        </section>
-        <div class="box box-primary">
-            <div class="box-header with-border">
-                <h3 class="box-title">All Visitors</h3>
-                <div class="box-tools pull-right">
-                    <div class="has-feedback">
-                        <input class="form-control input-sm" placeholder="Search Mail" type="text">
-                        <span class="glyphicon glyphicon-search form-control-feedback"></span>
+    <div style="margin: 20px 10%" class="card">
+        <div class="row">
+            <div class="col-12">
+                <div class="box box-primary">
+                    <div class="box-header">
+                        <h3 class="box-title text-success">All Visitors</h3>
                     </div>
-                </div><!-- /.box-tools -->
-            </div><!-- /.box-header -->
-            <div class="box-body no-padding">
-                <div class="mailbox-controls">
-                    <div class="btn-group">
-                        <button class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></button>
-                        <button class="btn btn-default btn-sm"><i class="fa fa-reply"></i></button>
-                        <button class="btn btn-default btn-sm"><i class="fa fa-share"></i></button>
-                    </div><!-- /.btn-group -->
-                    <button class="btn btn-default btn-sm reload"><i class="fa fa-refresh"></i></button>
-                    <div class="pull-right">
-                        pagination
-                    </div><!-- /.pull-right -->
+                    <!-- /.box-header -->
+                    <div class="box-body table-responsive hidden-overflow">
+
+                        <v-client-table :data="tableData" :columns="columns" :options="options"
+                                        v-if="tableData.length > 0">
+                            <strong slot="id" slot-scope="props">{{ props.index }}</strong>
+                        </v-client-table>
+
+                    </div>
+                    <!-- /.box-body -->
                 </div>
-                <div class="table-responsive mailbox-messages" style="width:100%">
-                    <table class="table table-hover table-striped">
-                        <thead>
-                        <tr class="text-center">
-                            <th class="text-center">id</th>
-                            <th style="width: 70px" class="text-center">Ip Address</th>
-                            <th class="text-center">Remote Host</th>
-                            <th class="text-center">User Agent</th>
-                            <th class="text-center">Referrer</th>
-                            <th class="text-center">Date</th>
-                            <th class="text-center">Time</th>
-                        </tr>
-                        </thead>
-                        <tbody>
+                <!-- /.box -->
 
-
-                        <tr style="height:10px; overflow: hidden;">
-                            <td class="text-center">{{ 1 }}</td>
-                            <td class="text-center">
-                                <div class="truncate" style="width:200px">{{ 'visitor ip' }}</div>
-                            </td>
-                            <td class="text-center">{{ 'remotehost' }}</td>
-                            <td class="text-center">{{ 'useragent' }}</td>
-                            <td class="text-center">{{ 'referrer' }}</td>
-                            <td class="text-center">
-                                <div class="truncate">{{ 'date' }}</div>
-                            </td>
-                            <td class="text-center">{{ 'time' }}</td>
-                        </tr>
-
-
-                        </tbody>
-                    </table><!-- /.table -->
-                </div><!-- /.mail-box-messages -->
-            </div><!-- /.box-body -->
-            <div class="box-footer no-padding">
-                <div class="mailbox-controls">
-                    <div class="btn-group">
-                        <button class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></button>
-                        <button class="btn btn-default btn-sm"><i class="fa fa-reply"></i></button>
-                        <button class="btn btn-default btn-sm"><i class="fa fa-share"></i></button>
-                    </div><!-- /.btn-group -->
-                    <button class="btn btn-default btn-sm reload"><i class="fa fa-refresh"></i></button>
-                    <div class="pull-right">
-                        {pagination
-                    </div><!-- /.pull-right -->
-                </div><!-- /.pull-right -->
             </div>
+        </div>
 
-        </div><!-- /. box -->
     </div>
 </template>
 
 <script>
+    import {mapGetters} from 'vuex';
+    import * as types from '../../../store/types';
+
     export default {
-        name: "visitors"
+        props: [],
+        components: {
+        },
+        methods: {
+            flag(category) {
+                if (category == "christian" || category == "islamic") {
+                    return true;
+                }
+                return false;
+            },
+            openDialog(action) {
+                this.$refs.modal.open()
+            },
+            closeDialog() {
+                this.$refs.modal.close()
+            }
+        },
+        created() {
+            this.$store.dispatch(types.FETCH_VISITORS);
+        },
+        data() {
+            return {
+                columns: ['id', 'ip', 'remotehost', 'location', 'referrer', 'pageview', 'useragent', 'date', 'time'],
+                options: {
+                    // see the options API
+                    // skin: "table-hover table-striped table-bordered",
+                    perPage: 10,
+                    // footerHeadings: true,
+                    highlightMatches: true,
+                    pagination: {
+                        chunk: 7,
+                        //set dropdown to true to get dropdown instead of pagenation
+                        dropdown: false
+                    },
+                    sortable: []
+                },
+            }
+        },
+        computed: mapGetters({
+            tableData: types.GET_VISITORS,
+        })
     }
 </script>
 
 <style scoped>
-    .wrapper-div {
-        margin: 0px 5% 0px 5%;
+    .wrapper {
+        margin-top: 10%;
+        background-color: transparent;
+    }
+
+    img {
+        height: 200px;
+        width: 200px;
+    }
+
+    .box-option {
+        height: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .pointer {
+        cursor: pointer;
+    }
+
+    td input {
+        margin-left: 15px;
+    }
+
+    td a {
+        cursor: pointer;
+    }
+
+    .options {
+        cursor: pointer;
+    }
+
+    .hidden-overflow {
+        overflow: hidden
     }
 </style>
+<style>
+    .sweet-title > h2 {
+        margin-top: 20px !important;
+        font-weight: bold;
+    }
+</style>
+

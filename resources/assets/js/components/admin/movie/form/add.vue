@@ -125,6 +125,7 @@
 
 <script>
     export default {
+        name: 'add',
         methods: {
             flag(category) {
                 if (category == "christian" || category == "islamic") {

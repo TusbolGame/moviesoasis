@@ -6,9 +6,9 @@
 
 <script>
     export default {
-        name: 'mo-layout',
-        mounted() {
-            console.log('Component mounted.')
+        name: 'admin-layout',
+        created() {
+            console.log('Component created.')
         }
     }
 </script>

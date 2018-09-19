@@ -245,7 +245,8 @@ class MoController extends Controller
             'menu' => 1,
             'title' => ucwords($movieDetail->name),
             'myvalues' => json_encode($myvalues),
-            'catSider' => MisleanousLib::siderVideos('any', $movieDetail->category, $movieDetail->name)
+            'catSider' => MisleanousLib::siderVideos('any', $movieDetail->category, $movieDetail->name),
+            'movie_id' => $hashId,
         ];
 
         return view('pages.mo.movie')
