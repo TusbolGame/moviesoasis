@@ -8,5 +8,17 @@ export const mo_mixins = {
         getThumbnail: (movieId) => {
             return 'https://ytimg.googleusercontent.com/vi/' + movieId + '/mqdefault.jpg';
         }
+    },
+    methods: {
+        isObjectEmpty: (obj) => {
+            for(let key in obj) {
+                if(obj.hasOwnProperty(key))
+                    return false;
+            }
+            return true;
+        },
+        embedVideo: (youlink) => {
+            return youlink.replace('watch?v=','embed/') + '?autoplay=1';
+        }
     }
 }

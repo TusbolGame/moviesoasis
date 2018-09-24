@@ -1,93 +1,18 @@
 webpackJsonp([8],{
 
-/***/ 116:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(108);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__partials_mixins_mo_mixins__ = __webpack_require__(723);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-
-
-/* harmony default export */ __webpack_exports__["a"] = ({
-    mixins: [__WEBPACK_IMPORTED_MODULE_1__partials_mixins_mo_mixins__["a" /* mo_mixins */]],
-    methods: {
-        flag: function flag(category) {
-            if (category == "christian" || category == "islamic") {
-                return true;
-            }
-            return false;
-        }
-    },
-    created: function created() {
-        this.$store.dispatch('fetchMoviesByCategory', this.category);
-    },
-    data: function data() {
-        return {
-            category: this.$route.params.category_name
-        };
-    },
-
-    computed: Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapGetters */])({
-        movies: 'getMoviesByCategory'
-    })
-});
-
-/***/ }),
-
-/***/ 217:
+/***/ 608:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_cacheDirectory_true_presets_env_modules_false_targets_browsers_2_uglify_true_node_modules_vue_loader_lib_selector_type_script_index_0_category_vue__ = __webpack_require__(116);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_cacheDirectory_true_presets_env_modules_false_targets_browsers_2_uglify_true_node_modules_vue_loader_lib_selector_type_script_index_0_home_vue__ = __webpack_require__(617);
 /* empty harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_4604b5f8_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_category_vue__ = __webpack_require__(220);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_4aaa6b65_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_home_vue__ = __webpack_require__(633);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__(50);
 var disposed = false
 function injectStyle (context) {
   if (disposed) return
-  __webpack_require__(218)
+  __webpack_require__(631)
 }
 /* script */
 
@@ -99,20 +24,20 @@ var __vue_template_functional__ = false
 /* styles */
 var __vue_styles__ = injectStyle
 /* scopeId */
-var __vue_scopeId__ = "data-v-4604b5f8"
+var __vue_scopeId__ = "data-v-4aaa6b65"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 
 var Component = Object(__WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__["a" /* default */])(
-  __WEBPACK_IMPORTED_MODULE_0__babel_loader_cacheDirectory_true_presets_env_modules_false_targets_browsers_2_uglify_true_node_modules_vue_loader_lib_selector_type_script_index_0_category_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_4604b5f8_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_category_vue__["a" /* render */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_4604b5f8_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_category_vue__["b" /* staticRenderFns */],
+  __WEBPACK_IMPORTED_MODULE_0__babel_loader_cacheDirectory_true_presets_env_modules_false_targets_browsers_2_uglify_true_node_modules_vue_loader_lib_selector_type_script_index_0_home_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_4aaa6b65_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_home_vue__["a" /* render */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_4aaa6b65_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_home_vue__["b" /* staticRenderFns */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/components/mo/category.vue"
+Component.options.__file = "resources/assets/js/components/mo/home.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -121,9 +46,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-4604b5f8", Component.options)
+    hotAPI.createRecord("data-v-4aaa6b65", Component.options)
   } else {
-    hotAPI.reload("data-v-4604b5f8", Component.options)
+    hotAPI.reload("data-v-4aaa6b65", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -135,24 +60,155 @@ if (false) {(function () {
 
 /***/ }),
 
-/***/ 218:
+/***/ 617:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+    created: function created() {}
+});
+
+/***/ }),
+
+/***/ 631:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(219);
+var content = __webpack_require__(632);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var add = __webpack_require__(14).default
-var update = add("21821295", content, false, {});
+var add = __webpack_require__(107).default
+var update = add("4a36c1c2", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"optionsId\":\"0\",\"vue\":true,\"id\":\"data-v-4604b5f8\",\"scoped\":true,\"sourceMap\":false}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./category.vue", function() {
-     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"optionsId\":\"0\",\"vue\":true,\"id\":\"data-v-4604b5f8\",\"scoped\":true,\"sourceMap\":false}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./category.vue");
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"optionsId\":\"0\",\"vue\":true,\"id\":\"data-v-4aaa6b65\",\"scoped\":true,\"sourceMap\":false}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./home.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"optionsId\":\"0\",\"vue\":true,\"id\":\"data-v-4aaa6b65\",\"scoped\":true,\"sourceMap\":false}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./home.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -163,22 +219,22 @@ if(false) {
 
 /***/ }),
 
-/***/ 219:
+/***/ 632:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(13)(undefined);
+exports = module.exports = __webpack_require__(106)(undefined);
 // imports
 
 
 // module
-exports.push([module.i, "\n.wrapper[data-v-4604b5f8] {\n    margin-top: 10%;\n    background-color: transparent;\n}\nimg[data-v-4604b5f8] {\n    height: 200px;\n    width: 200px;\n}\n", ""]);
+exports.push([module.i, "\n.wrapper[data-v-4aaa6b65] {\n    margin-top: 10%;\n    background-color: transparent;\n}\nimg[data-v-4aaa6b65] {\n    height: 200px;\n    width: 200px;\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 220:
+/***/ 633:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -188,158 +244,355 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    {},
-    [
-      _c(
-        "section",
-        {
-          staticClass: "content-headerf",
-          staticStyle: {
-            float: "left !important",
-            width: "100%",
-            "margin-top": "20px"
-          }
-        },
-        [
-          _c("ol", { staticClass: "breadcrumb" }, [
-            _c(
-              "li",
-              [
-                _c(
-                  "router-link",
-                  { attrs: { tag: "a", to: { name: "home" } } },
-                  [
-                    _c("i", { staticClass: "glyphicon glyphicon-home" }),
-                    _vm._v(" Home\n                ")
-                  ]
-                )
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _vm.flag(_vm.category.toLowerCase())
-              ? _c(
-                  "li",
-                  [
-                    _c(
-                      "router-link",
-                      {
-                        attrs: {
-                          tag: "a",
-                          to: {
-                            name: "category",
-                            params: { religious: _vm.movie.enc_id }
-                          }
-                        }
-                      },
-                      [
-                        _c("i", { staticClass: "glyphicon glyphicon-star" }),
-                        _vm._v(" Religious\n                ")
-                      ]
-                    )
-                  ],
-                  1
-                )
-              : _vm._e(),
-            _vm._v(" "),
-            _c("li", { staticClass: "active" }, [
-              _vm._v(_vm._s(_vm._f("ucWords")(_vm.category)) + " Movies")
-            ])
-          ])
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        {
-          staticClass: "headings text-center h2",
-          staticStyle: { "margin-top": "80px" }
-        },
-        [
-          _vm._v(
-            "\n        " + _vm._s(_vm._f("ucWords")(_vm.category)) + "\n    "
-          )
-        ]
-      ),
-      _vm._v(" "),
-      _c("div", { staticClass: "topic-row-height text-center" }, [
+  return _c("div", { staticClass: "text-center" }, [
+    _vm._m(0),
+    _vm._v(" "),
+    _c("div", { staticClass: "topic-row-height row-even" }, [
+      _vm._v(
+        "\n        Download all latest Yoruba movies of different format from here for free.\n    "
+      )
+    ]),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "topic-row-height" },
+      [
         _c(
-          "a",
+          "router-link",
           {
-            staticStyle: { color: "red !important", "font-weight": "bold" },
-            attrs: { href: "/" + _vm.category + "/allmovies" }
+            attrs: {
+              tag: "a",
+              to: { name: "category", params: { category_name: "yoruba" } }
+            }
+          },
+          [_vm._v("\n            YORUBA MOVIES\n        ")]
+        )
+      ],
+      1
+    ),
+    _vm._v(" "),
+    _c("div", { staticClass: " topic-row-height row-even" }, [
+      _vm._v(
+        "\n        Download all latest nigeria nollywood movies of different format from here for free.\n    "
+      )
+    ]),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "topic-row-height" },
+      [
+        _c(
+          "router-link",
+          {
+            attrs: {
+              tag: "a",
+              to: { name: "category", params: { category_name: "english" } }
+            }
+          },
+          [_vm._v("\n            NOLLYWOOD MOVIES\n        ")]
+        )
+      ],
+      1
+    ),
+    _vm._v(" "),
+    _c("div", { staticClass: " topic-row-height row-even" }, [
+      _vm._v(
+        "\n        Download all latest hausa movies of different format from here for free.\n    "
+      )
+    ]),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "topic-row-height" },
+      [
+        _c(
+          "router-link",
+          {
+            attrs: {
+              tag: "a",
+              to: { name: "category", params: { category_name: "hausa" } }
+            }
+          },
+          [_vm._v("\n            HAUSA MOVIES\n        ")]
+        )
+      ],
+      1
+    ),
+    _vm._v(" "),
+    _c("div", { staticClass: " topic-row-height row-even" }, [
+      _vm._v(
+        "\n        Download all latest ghanian movies of different format from here for free.\n    "
+      )
+    ]),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "topic-row-height" },
+      [
+        _c(
+          "router-link",
+          {
+            attrs: {
+              tag: "a",
+              to: { name: "category", params: { category_name: "ghanaian" } }
+            }
+          },
+          [_vm._v("\n            GHANAIAN MOVIES\n        ")]
+        )
+      ],
+      1
+    ),
+    _vm._v(" "),
+    _c("div", { staticClass: " topic-row-height row-even" }, [
+      _vm._v(
+        "\n        Download all latest Indian movies of different format from here for free.\n    "
+      )
+    ]),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "topic-row-height" },
+      [
+        _c(
+          "router-link",
+          {
+            attrs: {
+              tag: "a",
+              to: { name: "category", params: { category_name: "indian" } }
+            }
           },
           [
-            _vm._v(
-              "All " + _vm._s(_vm._f("ucWords")(_vm.category)) + " Movies here"
+            _vm._v("\n            INDIAN MOVIES "),
+            _c(
+              "span",
+              { staticStyle: { color: "red", "font-weight": "bold" } },
+              [_vm._v("(new)")]
             )
           ]
         )
-      ]),
-      _vm._v(" "),
-      _vm._l(_vm.movies, function(movie, key) {
-        return _c(
-          "div",
+      ],
+      1
+    ),
+    _vm._v(" "),
+    _c("div", { staticClass: " topic-row-height row-even" }, [
+      _vm._v(
+        "\n        Download latest religious preaches of different format from here for free.\n    "
+      )
+    ]),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "topic-row-height" },
+      [
+        _c(
+          "router-link",
           {
-            staticClass: "topic-row-height text-center",
-            class: key % 2 == 1 ? "" : "row-even"
+            attrs: {
+              tag: "a",
+              to: { name: "category", params: { category_name: "religious" } }
+            }
+          },
+          [_vm._v("\n            RELIGIOUS PREACHES\n        ")]
+        )
+      ],
+      1
+    ),
+    _vm._v(" "),
+    _c("div", { staticClass: " topic-row-height row-even" }, [
+      _vm._v(
+        "\n        Download all latest comedy movies of different format from here for free.\n    "
+      )
+    ]),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "topic-row-height" },
+      [
+        _c(
+          "router-link",
+          {
+            attrs: {
+              tag: "a",
+              to: { name: "category", params: { category_name: "comedy" } }
+            }
+          },
+          [_vm._v("\n            COMEDY\n        ")]
+        )
+      ],
+      1
+    ),
+    _vm._v(" "),
+    _c("div", { staticClass: " topic-row-height row-even" }, [
+      _vm._v(
+        "\n        Download latest wrestling clips of different format from here for free.\n    "
+      )
+    ]),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "topic-row-height" },
+      [
+        _c(
+          "router-link",
+          {
+            attrs: {
+              tag: "a",
+              to: { name: "category", params: { category_name: "wrestling" } }
+            }
+          },
+          [_vm._v("\n            WRESTLING\n        ")]
+        )
+      ],
+      1
+    ),
+    _vm._v(" "),
+    _c("div", { staticClass: " topic-row-height row-even" }, [
+      _vm._v(
+        "\n        Download all latest football highlight clips of different format from here for free.\n    "
+      )
+    ]),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "topic-row-height" },
+      [
+        _c(
+          "router-link",
+          {
+            attrs: {
+              tag: "a",
+              to: {
+                name: "category",
+                params: { category_name: "football_highlight" }
+              }
+            }
+          },
+          [_vm._v("\n            FOOTBALL HIGHLIGHT\n        ")]
+        )
+      ],
+      1
+    ),
+    _vm._v(" "),
+    _c("div", { staticClass: " topic-row-height row-even" }, [
+      _vm._v(
+        "\n        Download all latest documentary of different format from here for free.\n    "
+      )
+    ]),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "topic-row-height" },
+      [
+        _c(
+          "router-link",
+          {
+            attrs: {
+              tag: "a",
+              to: { name: "category", params: { category_name: "documentary" } }
+            }
+          },
+          [_vm._v("\n            DOCUMENTARY\n        ")]
+        )
+      ],
+      1
+    ),
+    _vm._v(" "),
+    _c("div", { staticClass: " topic-row-height row-even" }, [
+      _vm._v(
+        "\n        Download latest technological discovery clips of different format from here for free.\n    "
+      )
+    ]),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "topic-row-height" },
+      [
+        _c(
+          "router-link",
+          {
+            attrs: {
+              tag: "a",
+              to: { name: "category", params: { category_name: "technology" } }
+            }
+          },
+          [_vm._v("\n            TECHNOLOGIES\n        ")]
+        )
+      ],
+      1
+    ),
+    _vm._v(" "),
+    _c("div", { staticClass: " topic-row-height row-even" }, [
+      _vm._v(
+        "\n        Download tutorials how how to do things from here for free.\n    "
+      )
+    ]),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "topic-row-height" },
+      [
+        _c(
+          "router-link",
+          {
+            attrs: {
+              tag: "a",
+              to: { name: "category", params: { category_name: "how_tos" } }
+            }
           },
           [
+            _vm._v("\n            HOW TOs  "),
             _c(
-              "router-link",
-              {
-                attrs: {
-                  tag: "a",
-                  to: { name: "movie", params: { movie_id: movie.enc_id } }
-                }
-              },
-              [
-                _vm._v(
-                  "\n            " +
-                    _vm._s(_vm._f("ucWords")(movie.name)) +
-                    "\n        "
-                )
-              ]
+              "span",
+              { staticStyle: { color: "red", "font-weight": "bold" } },
+              [_vm._v("(new)")]
             )
-          ],
-          1
+          ]
         )
-      })
-    ],
-    2
-  )
+      ],
+      1
+    ),
+    _vm._v(" "),
+    _c("div", { staticClass: " topic-row-height row-even" }, [
+      _vm._v(
+        "\n        Download latest Yoruba dubbed movies of different format from here for free.\n    "
+      )
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "topic-row-height" }, [
+      _vm._v("\n        YORUBA DURBBED MOVIES\n    ")
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: " topic-row-height row-even" }, [
+      _vm._v(
+        "\n        Download latest music both mp3 & mp4 format for here for free.\n    "
+      )
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "topic-row-height" }, [
+      _vm._v("\n        MUSIC\n    ")
+    ])
+  ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticStyle: { margin: "30px 10%", "font-size": "1.4em" } },
+      [_c("strong", [_vm._v("Download latest movies")])]
+    )
+  }
+]
 render._withStripped = true
 
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-4604b5f8", { render: render, staticRenderFns: staticRenderFns })
+    require("vue-hot-reload-api")      .rerender("data-v-4aaa6b65", { render: render, staticRenderFns: staticRenderFns })
   }
 }
-
-/***/ }),
-
-/***/ 723:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return mo_mixins; });
-var mo_mixins = {
-    filters: {
-        ucWords: function ucWords(str) {
-            return str.replace(/\w\S*/g, function (txt) {
-                return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
-            });
-        },
-        getThumbnail: function getThumbnail(movieId) {
-            return 'https://ytimg.googleusercontent.com/vi/' + movieId + '/mqdefault.jpg';
-        }
-    }
-};
 
 /***/ })
 

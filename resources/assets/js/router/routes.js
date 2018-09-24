@@ -48,7 +48,7 @@ export const routes = [
             {
                 path: 'playonline/:movie_id',
                 name: 'playonline',
-                component: resolve => require(['../components/admin/user/users.vue'], resolve).default,
+                component: resolve => require(['../components/mo/watchonline'], resolve).default,
                 meta: {
                     menu: 4,
                     title: "Movie",

@@ -1,17 +1,17 @@
 <template>
     <div class="">
-        <div v-if="movie.length">
+        <div v-if="!isObjectEmpty(movie)">
             <section class="content-headerf" style="float: left !important; width: 100%; margin-top: 20px;">
-                <!--<ol class="breadcrumb">-->
-                    <!--<li><a href="/"><i class="glyphicon glyphicon-home"></i> Home</a></li>-->
-                    <!--<li>-->
-                        <!--<a :href="'/category/' + videoCategoryLink(movie.movieDetail.category).toLowerCase()">-->
-                            <!--<i class="glyphicon glyphicon-expand"></i>-->
-                            <!--{{ videoCategory(movie.movieDetail.category.toLowerCase()) }} Movies-->
-                        <!--</a>-->
-                    <!--</li>-->
-                    <!--<li class="active">{{ movie.movieDetail.name | ucWords }}</li>-->
-                <!--</ol>-->
+                <ol class="breadcrumb">
+                    <li><a href="/"><i class="glyphicon glyphicon-home"></i> Home</a></li>
+                    <li>
+                        <a :href="'/category/' + videoCategoryLink(movie.movieDetail.category).toLowerCase()">
+                            <i class="glyphicon glyphicon-expand"></i>
+                            {{ videoCategory(movie.movieDetail.category.toLowerCase()) }} Movies
+                        </a>
+                    </li>
+                    <li class="active">{{ movie.movieDetail.name | ucWords }}</li>
+                </ol>
             </section>
             <div class="headings text-center h2" style="margin-top:80px;">
                 <strong>{{ movie.title }}</strong>
@@ -27,20 +27,20 @@
                     Released Date:
                 </div>
                 <div class="col-xs-6 blue row-even">
-                    <!--{{ movie.movieDetail.released_date }}-->
+                    {{ movie.movieDetail.released_date }}
                 </div>
                 <div class="col-xs-6 text-right">
                     Duration:
                 </div>
                 <div class="col-xs-6">
-                    {{ movie }}
+                    {{ movie.movieDetail.duration }}
                 </div>
             </div>
         </div>
 
         <slot></slot>
 
-        <div class="">
+        <div class="" v-if="!isObjectEmpty(movie)">
             <!-- watch online -->
 
             <div class=" topic-row-height row-even text-center download-div h3" style="color:white">

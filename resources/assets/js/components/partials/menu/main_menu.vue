@@ -3,46 +3,39 @@
         <div class="img-rounded menu-wrapper">
             <ol class="myMenu no-padding">
                 <li :class="(menu == 1) ? 'active' : ''">
-                    <router-link tag="a" :to="{name: 'crawlers'}" v-if="menu != 1">
+                    <router-link :tag="(menu == 1) ? 'span' : 'a'" :to="{name: 'crawlers'}">
                         <i class="glyphicon glyphicon-home"></i> Home
                     </router-link>
-                    <i class="glyphicon glyphicon-home" v-else></i> Home
                 </li>
                 <li :class="(menu == 2) ? 'active' : ''">
-                    <router-link tag="a" :to="{name: 'crawlers'}" v-if="menu != 2">
+                    <router-link :tag="(menu == 2) ? 'span' : 'a'" :to="{name: 'crawlers'}">
                         <i class="glyphicon glyphicon-phone"></i> Forum
                     </router-link>
-                    <i class="glyphicon glyphicon-phone" v-else></i> Forum
                 </li>
                 <li :class="(menu == 3) ? 'active' : ''">
-                    <router-link tag="a" :to="{name: 'crawlers'}" v-if="menu != 3">
+                    <router-link :tag="(menu == 3) ? 'span' : 'a'" :to="{name: 'crawlers'}">
                         <i class="glyphicon glyphicon-folder-open"></i> Deck
                     </router-link>
-                    <i class="glyphicon glyphicon-folder-open" v-else></i> Deck
                 </li>
                 <li :class="(menu == 4) ? 'active' : ''">
-                    <router-link tag="a" :to="{name: 'crawlers'}" v-if="menu != 4">
+                    <router-link :tag="(menu == 4) ? 'span' : 'a'" :to="{name: 'crawlers'}">
                         <i class="glyphicon glyphicon-user"></i> About Us
                     </router-link>
-                    <i class="glyphicon glyphicon-user" v-else></i> About Us
                 </li>
                 <li :class="(menu == 5) ? 'active' : ''">
-                    <router-link tag="a" :to="{name: 'crawlers'}" v-if="menu != 5">
+                    <router-link :tag="(menu == 5) ? 'span' : 'a'" :to="{name: 'crawlers'}">
                         <i class="glyphicon glyphicon-envelope"></i>Contact Us
                     </router-link>
-                    <i class="glyphicon glyphicon-envelope" v-else></i> Contact Us
                 </li>
                 <li :class="(menu == 6) ? 'active' : ''">
-                    <router-link tag="a" :to="{name: 'crawlers'}" v-if="menu != 6">
+                    <router-link :tag="(menu == 6) ? 'span' : 'a'" :to="{name: 'crawlers'}">
                         <i class="glyphicon glyphicon-file"></i>Privacy
                     </router-link>
-                    <i class="glyphicon glyphicon-file" v-else></i> Privacy
                 </li>
                 <li :class="(menu == 7) ? 'active' : ''">
-                    <router-link tag="a" :to="{name: 'crawlers'}" v-if="menu != 7">
+                    <router-link :tag="(menu == 7) ? 'span' : 'a'" :to="{name: 'crawlers'}">
                         <i class="glyphicon glyphicon-search"></i>MOSearch
                     </router-link>
-                    <i class="glyphicon glyphicon-search" v-else></i> MOSearch
                 </li>
             </ol>
         </div>
