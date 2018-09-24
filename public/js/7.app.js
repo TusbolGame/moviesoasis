@@ -85,6 +85,24 @@ var mo_mixins = {
         },
         embedVideo: function embedVideo(youlink) {
             return youlink.replace('watch?v=', 'embed/') + '?autoplay=1';
+        },
+        videoCategoryLink: function videoCategoryLink(cat) {
+            if (cat == 'religious__muslim') {
+                return 'religious/islamic';
+            } else if (cat == 'religious__christian') {
+                return 'religious/christian';
+            } else {
+                return cat;
+            }
+        },
+        videoCategory: function videoCategory(cat) {
+            if (cat == 'religious__muslim') {
+                return 'Islamic';
+            } else if (cat == 'religious__christian') {
+                return 'Christian';
+            } else {
+                return cat;
+            }
         }
     }
 };

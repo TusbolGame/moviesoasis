@@ -55,15 +55,18 @@ export const ADD_USER = 'movie/ADD_USER';
 export const GET_MO_MOVIES_BY_CATEGORY = 'movieoasis/GET_MO_MOVIES_BY_CATEGORY';
 export const GET_MO_MOVIES_BY_ALPHABET = 'movieoasis/GET_MO_MOVIES_BY_ALPHABET';
 export const GET_MO_MOVIE = 'movieoasis/GET_MO_MOVIE';
+export const GET_DOWNLOAD_MO_MOVIE = 'movieoasis/GET_DOWNLOAD_MO_MOVIE';
 
 
 // Mutations
 export const MUTATE_FETCH_MO_MOVIES_BY_CATEGORY = 'movieoasis/MUTATE_FETCH_MO_MOVIES_BY_CATEGORY';
 export const MUTATE_FETCH_MO_MOVIES_BY_ALPHABET = 'movieoasis/MUTATE_FETCH_MO_MOVIES_BY_ALPHABET';
 export const MUTATE_FETCH_MO_MOVIE = 'movieoasis/MUTATE_FETCH_MO_MOVIE';
+export const MUTATE_FETCH_DOWNLOAD_MO_MOVIE = 'movieoasis/MUTATE_FETCH_DOWNLOAD_MO_MOVIE';
 
 
 // Actions
 export const FETCH_MO_MOVIES_BY_CATEGORY = 'movieoasis/FETCH_MO_MOVIES_BY_CATEGORY';
 export const FETCH_MO_MOVIES_BY_ALPHABET = 'movieoasis/FETCH_MO_MOVIES_BY_ALPHABET';
 export const FETCH_MO_MOVIE = 'movieoasis/FETCH_MO_MOVIE';
+export const DOWNLOAD_MO_MOVIE = 'movieoasis/DOWNLOAD_MO_MOVIE';

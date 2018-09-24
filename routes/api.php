@@ -13,8 +13,9 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('/movies/category/{category}', ['as'=> 'bots', 'uses'=> 'Movies\MoviesController@category']);
-Route::get('/movie/{movie_id}', ['as'=> 'bots', 'uses'=> 'Movies\MoviesController@movie']);
+Route::get('/movies/category/{category}', ['as'=> 'category', 'uses'=> 'Movies\MoviesController@category']);
+Route::get('/movie/{movieId}', ['as'=> 'movieInfo', 'uses'=> 'Movies\MoviesController@movie']);
+Route::get('/download/{movieId}', ['as'=> 'movieDownload', 'uses'=> 'Movies\MoviesController@download']);
 
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {

@@ -58,7 +58,7 @@ export const routes = [
             {
                 path: 'download/:movie_id',
                 name: 'download',
-                component: resolve => require(['../components/admin/visitor/visitors.vue'], resolve).default,
+                component: resolve => require(['../components/mo/download'], resolve).default,
                 meta: {
                     menu: 5,
                     title: "Download",

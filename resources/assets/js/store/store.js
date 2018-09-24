@@ -20,6 +20,7 @@ export const store = new Vuex.Store({
         MO_moviesByCategory:{},
         MO_moviesByAlphabet:{},
         MO_movie:{},
+        MO_download_movie:{},
         MO_page: 0,
 
 

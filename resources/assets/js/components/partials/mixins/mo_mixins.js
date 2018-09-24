@@ -19,6 +19,28 @@ export const mo_mixins = {
         },
         embedVideo: (youlink) => {
             return youlink.replace('watch?v=','embed/') + '?autoplay=1';
+        },
+        videoCategoryLink(cat) {
+            if (cat == 'religious__muslim') {
+                return 'religious/islamic'
+            }
+            else if (cat == 'religious__christian') {
+                return 'religious/christian'
+            }
+            else {
+                return cat
+            }
+        },
+        videoCategory(cat) {
+            if (cat == 'religious__muslim') {
+                return 'Islamic'
+            }
+            else if (cat == 'religious__christian') {
+                return 'Christian'
+            }
+            else {
+                return cat
+            }
         }
     }
 }

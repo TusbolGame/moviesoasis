@@ -6,3 +6,7 @@ export const getMoviesByCategory = state => {
 export const getMovie = state => {
     return state.MO_movie;
 };
+
+export const getDownloadMovie = state => {
+    return state.MO_download_movie;
+};

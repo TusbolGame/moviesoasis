@@ -20,5 +20,15 @@ export default {
                 reject(error.response);
             })
         })
+    },
+    getDownloadMovieinfo(movieId) {
+        return new Promise((resolve, reject) => {
+            axios.get('/download/' + movieId)
+                .then(response => {
+                    resolve(response.data)
+                }).catch((error) => {
+                reject(error.response);
+            })
+        })
     }
 }

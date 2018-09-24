@@ -11,13 +11,15 @@
 //Route::get('/download/{hashId}', ['as' => 'download', 'uses' => 'MoController@download']);
 //Route::get('/subtitle/{hashId}', ['as' => 'subtitle', 'uses' => 'MoController@subtitle']);
 //Route::get('/getsubtitle/{hashId}/{hash}', ['as' => 'get-subtitle', 'uses' => 'MoController@getsubtitle']);
-//Route::get('/vdownload', ['as' => 'vdownload', 'uses' => 'MoController@vdownload']);
+
 //Route::get('/playonline/{hashId}', ['as' => 'watch-movies', 'uses' => 'MoController@watchmovie']);
 //Route::get('/{cat}/allmovies', ['as' => 'all-movies', 'uses' => 'MoController@allmovies']);
 //Route::get('/{cat}/movies/{alphabet}', ['as' => 'movies', 'uses' => 'MoController@movies']);
 //Route::get('/search', ['as' => 'get-search', 'uses' => 'MoController@search']);
 //Route::post('/search', ['as' => 'post-search', 'uses' => 'MoController@search']);
 
+
+Route::get('/vdownload', ['as' => 'vdownload', 'uses' => 'MoController@vdownload']);
 
 
 //API ROUTES

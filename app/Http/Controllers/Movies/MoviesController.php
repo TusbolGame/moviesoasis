@@ -33,10 +33,8 @@ class MoviesController extends Controller
      * @param hashId: string - video enc_id
      * @return void
      */
-    public function movie($movie_id)
-    {
-        $movieDetail = MoviesInfo::where('enc_id', $movie_id)
-            ->first();
+    public function movie($movieId) {
+        $movieDetail = MoviesInfo::where('enc_id', $movieId)->first();
 
         $data = [
             'menu' => 1,
@@ -48,4 +46,29 @@ class MoviesController extends Controller
 
        return response($data);
     }
+
+    /**
+     * Method for the download links page.
+     *
+     * @return void
+     */
+    public function download($movieId) {
+
+        $movieDetail = MoviesInfo::where('enc_id', $movieId)->first();
+
+        if ($movieDetail == NULL) return [];
+
+        $data = [
+            'menu' => 1,
+            'title' => ucwords($movieDetail->name),
+            'category' => ucwords($movieDetail->category),
+            'movieId' => EfikasLib::getMovieId($movieDetail->youlink),
+            'thumbnail' => EfikasLib::getThumbnail($movieDetail->youlink),
+            'movieDetail' => $movieDetail,
+            'downloadLinks' => EfikasLib::getDownloadLinks($movieDetail->youlink),
+        ];
+
+        return response($data);
+    }
+
 }

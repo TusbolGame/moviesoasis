@@ -13836,12 +13836,15 @@ module.exports = function isGlob(str) {
 /* unused harmony export GET_MO_MOVIES_BY_CATEGORY */
 /* unused harmony export GET_MO_MOVIES_BY_ALPHABET */
 /* unused harmony export GET_MO_MOVIE */
+/* unused harmony export GET_DOWNLOAD_MO_MOVIE */
 /* unused harmony export MUTATE_FETCH_MO_MOVIES_BY_CATEGORY */
 /* unused harmony export MUTATE_FETCH_MO_MOVIES_BY_ALPHABET */
 /* unused harmony export MUTATE_FETCH_MO_MOVIE */
+/* unused harmony export MUTATE_FETCH_DOWNLOAD_MO_MOVIE */
 /* unused harmony export FETCH_MO_MOVIES_BY_CATEGORY */
 /* unused harmony export FETCH_MO_MOVIES_BY_ALPHABET */
 /* unused harmony export FETCH_MO_MOVIE */
+/* unused harmony export DOWNLOAD_MO_MOVIE */
 // Getters
 var GET_MOVIES = 'movie/GET_MOVIES';
 
@@ -13884,16 +13887,19 @@ var ADD_USER = 'movie/ADD_USER';
 var GET_MO_MOVIES_BY_CATEGORY = 'movieoasis/GET_MO_MOVIES_BY_CATEGORY';
 var GET_MO_MOVIES_BY_ALPHABET = 'movieoasis/GET_MO_MOVIES_BY_ALPHABET';
 var GET_MO_MOVIE = 'movieoasis/GET_MO_MOVIE';
+var GET_DOWNLOAD_MO_MOVIE = 'movieoasis/GET_DOWNLOAD_MO_MOVIE';
 
 // Mutations
 var MUTATE_FETCH_MO_MOVIES_BY_CATEGORY = 'movieoasis/MUTATE_FETCH_MO_MOVIES_BY_CATEGORY';
 var MUTATE_FETCH_MO_MOVIES_BY_ALPHABET = 'movieoasis/MUTATE_FETCH_MO_MOVIES_BY_ALPHABET';
 var MUTATE_FETCH_MO_MOVIE = 'movieoasis/MUTATE_FETCH_MO_MOVIE';
+var MUTATE_FETCH_DOWNLOAD_MO_MOVIE = 'movieoasis/MUTATE_FETCH_DOWNLOAD_MO_MOVIE';
 
 // Actions
 var FETCH_MO_MOVIES_BY_CATEGORY = 'movieoasis/FETCH_MO_MOVIES_BY_CATEGORY';
 var FETCH_MO_MOVIES_BY_ALPHABET = 'movieoasis/FETCH_MO_MOVIES_BY_ALPHABET';
 var FETCH_MO_MOVIE = 'movieoasis/FETCH_MO_MOVIE';
+var DOWNLOAD_MO_MOVIE = 'movieoasis/DOWNLOAD_MO_MOVIE';
 
 /***/ }),
 /* 76 */
@@ -58042,6 +58048,15 @@ module.exports = function (regExp, replace) {
                 reject(error.response);
             });
         });
+    },
+    getDownloadMovieinfo: function getDownloadMovieinfo(movieId) {
+        return new Promise(function (resolve, reject) {
+            __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/download/' + movieId).then(function (response) {
+                resolve(response.data);
+            }).catch(function (error) {
+                reject(error.response);
+            });
+        });
     }
 });
 
@@ -60747,7 +60762,7 @@ var routes = [{ path: '/',
         path: 'download/:movie_id',
         name: 'download',
         component: function component(resolve) {
-            return __webpack_require__.e/* require */(0).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(177)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe).default;
+            return __webpack_require__.e/* require */(0).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(699)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe).default;
         },
         meta: {
             menu: 5,
@@ -60805,7 +60820,7 @@ var routes = [{ path: '/',
         path: 'visitors/',
         name: 'visitors',
         component: function component(resolve) {
-            return __webpack_require__.e/* require */(0/* duplicate */).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(177)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe).default;
+            return __webpack_require__.e/* require */(13).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(177)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe).default;
         },
         meta: {
             menu: 5,
@@ -61316,6 +61331,7 @@ var store = new __WEBPACK_IMPORTED_MODULE_1_vuex__["a" /* default */].Store({
         MO_moviesByCategory: {},
         MO_moviesByAlphabet: {},
         MO_movie: {},
+        MO_download_movie: {},
         MO_page: 0
 
     },
@@ -61449,6 +61465,7 @@ var actions = _defineProperty({}, __WEBPACK_IMPORTED_MODULE_0__types__["c" /* FE
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchMoviesByCategory", function() { return fetchMoviesByCategory; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchMovieInfo", function() { return fetchMovieInfo; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchDownloadMovieInfo", function() { return fetchDownloadMovieInfo; });
 
 var fetchMoviesByCategory = function fetchMoviesByCategory(_ref, category) {
     var commit = _ref.commit;
@@ -61462,8 +61479,17 @@ var fetchMovieInfo = function fetchMovieInfo(_ref2, movieId) {
     var commit = _ref2.commit;
 
     Vue.main.getMovieinfo(movieId).then(function (data) {
-        console.log(data);
+        // console.log(data);
         commit('setMovieInfo', data);
+    });
+};
+
+var fetchDownloadMovieInfo = function fetchDownloadMovieInfo(_ref3, movieId) {
+    var commit = _ref3.commit;
+
+    Vue.main.getDownloadMovieinfo(movieId).then(function (data) {
+        // console.log(data);
+        commit('setDownloadMovieInfo', data);
     });
 };
 
@@ -61475,6 +61501,7 @@ var fetchMovieInfo = function fetchMovieInfo(_ref2, movieId) {
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getMoviesByCategory", function() { return getMoviesByCategory; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getMovie", function() { return getMovie; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getDownloadMovie", function() { return getDownloadMovie; });
 
 var getMoviesByCategory = function getMoviesByCategory(state) {
     return state.MO_moviesByCategory;
@@ -61482,6 +61509,10 @@ var getMoviesByCategory = function getMoviesByCategory(state) {
 
 var getMovie = function getMovie(state) {
     return state.MO_movie;
+};
+
+var getDownloadMovie = function getDownloadMovie(state) {
+    return state.MO_download_movie;
 };
 
 /***/ }),
@@ -61492,6 +61523,7 @@ var getMovie = function getMovie(state) {
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setMoviesByCategory", function() { return setMoviesByCategory; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setMovieInfo", function() { return setMovieInfo; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setDownloadMovieInfo", function() { return setDownloadMovieInfo; });
 
 var setMoviesByCategory = function setMoviesByCategory(state, payload) {
     state.MO_moviesByCategory = payload;
@@ -61499,6 +61531,10 @@ var setMoviesByCategory = function setMoviesByCategory(state, payload) {
 
 var setMovieInfo = function setMovieInfo(state, payload) {
     state.MO_movie = payload;
+};
+
+var setDownloadMovieInfo = function setDownloadMovieInfo(state, payload) {
+    state.MO_download_movie = payload;
 };
 
 /***/ }),

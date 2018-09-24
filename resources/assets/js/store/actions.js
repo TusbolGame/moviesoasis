@@ -9,7 +9,15 @@ export const fetchMoviesByCategory = ({ commit }, category) => {
 export const fetchMovieInfo = ({ commit }, movieId) => {
     Vue.main.getMovieinfo(movieId)
         .then((data) => {
-            console.log(data)
+            // console.log(data);
             commit('setMovieInfo', data);
+        })
+}
+
+export const fetchDownloadMovieInfo = ({ commit }, movieId) => {
+    Vue.main.getDownloadMovieinfo(movieId)
+        .then((data) => {
+            // console.log(data);
+            commit('setDownloadMovieInfo', data);
         })
 }
