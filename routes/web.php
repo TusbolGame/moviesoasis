@@ -22,11 +22,6 @@
 Route::get('/vdownload', ['as' => 'vdownload', 'uses' => 'MoController@vdownload']);
 
 
-//API ROUTES
-Route::get('/api/getmovies/category/{cat}/pagenumber/{num}', 'ApiController@getMovies');
-//Route::get('/bot/start', 'BotController@start');
-Route::get('/api/getbots/pagenumber/{num}', 'ApiController@getBots');
-
 
 Auth::routes();
 //Route::group(['middleware'=> ['auth']], function(){

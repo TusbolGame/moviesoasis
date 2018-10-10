@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\MoviesUpload;
+use App\Model\MoviesInfo;
 
 class MovieController extends Controller
 {
@@ -15,11 +15,13 @@ class MovieController extends Controller
      */
     public function index(Request $request)
     {
+        $pageNumber = $request->num;
+        $category = $request->cat;
 
-        $category = $request->category;
-        $movies = MoviesUpload::orderBy('id', 'Desc')
+        $movies = MoviesInfo::orderBy('id', 'Desc')
             ->where('category', $category)
-            ->get();
+            ->paginate(5000, ['*'], 'page', $pageNumber);
+        // dd($rooms);
         return response(['data' => $movies]);
     }
 
@@ -28,7 +30,7 @@ class MovieController extends Controller
 
         $movie = $request->movie;
 
-        $movies = MoviesUpload::orderBy('id', 'Desc')
+        $movies = MoviesInfo::orderBy('id', 'Desc')
             ->where('name', $movie)
             ->get();
 

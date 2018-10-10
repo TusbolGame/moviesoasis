@@ -3,11 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\MoviesInfo;
-use App\MoviesUpload;
-use App\PageView;
-use App\Bots;
-use App\Visitors;
+use App\Model\MoviesInfo;
+use App\Model\MoviesUpload;
+use App\Model\PageView;
+use App\Model\Bots;
+use App\Model\Visitors;
 use App\Libraries\EfikasLib;
 use App\Libraries\EfikasVisitors;
 

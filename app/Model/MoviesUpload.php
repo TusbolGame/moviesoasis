@@ -1,17 +1,17 @@
 <?php
 
-namespace App;
+namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
-class MoviesInfo extends Model
+class MoviesUpload extends Model
 {
     /**
      * The table associated with the model.
      *
      * @var string
      */
-    protected $table = 'movies_info';
+    protected $table = 'movies_upload';
      /**
      * Indicates if the model should be timestamped.
      *

@@ -18,9 +18,11 @@
                         <v-client-table :data="tableData" :columns="columns" :options="options"
                                         v-if="tableData.length > 0">
                             <a slot="id" slot-scope="props">{{ props.index }}</a>
+                            <div slot="name" slot-scope="props" :class="(props.row.available == 1) ? 'text-success' : 'text-danger'">
+                                {{ props.row.name }}
+                            </div>
                             <div slot="options" slot-scope="props">
                                 <i class="glyphicon glyphicon-edit text-primary options"></i>
-                                &nbsp;&nbsp;&nbsp;&nbsp;
                                 <i class="glyphicon glyphicon-trash text-danger options"></i>
                             </div>
                         </v-client-table>

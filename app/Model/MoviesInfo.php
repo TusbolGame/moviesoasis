@@ -1,21 +1,21 @@
 <?php
 
-namespace App;
+namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Bots extends Model
+class MoviesInfo extends Model
 {
-   /**
+    /**
      * The table associated with the model.
      *
      * @var string
      */
-    protected $table = 'crawlers';
+    protected $table = 'movies_info';
      /**
      * Indicates if the model should be timestamped.
      *
      * @var bool
      */
-    public $timestamps = false;
+    public $timestamps = true;
 }

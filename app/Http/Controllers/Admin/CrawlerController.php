@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Model\MoviesUpload;
 
 class CrawlerController extends Controller
 {
@@ -12,10 +13,28 @@ class CrawlerController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+
+        $category = $request->category;
+        $movies = MoviesUpload::orderBy('id', 'Desc')
+            ->where('category', $category)
+            ->get();
+        return response(['data' => $movies]);
     }
+
+    public function search(Request $request)
+    {
+
+        $movie = $request->movie;
+
+        $movies = MoviesUpload::orderBy('id', 'Desc')
+            ->where('name', $movie)
+            ->get();
+
+        return response(['data' => $movies]);
+    }
+
 
     /**
      * Show the form for creating a new resource.

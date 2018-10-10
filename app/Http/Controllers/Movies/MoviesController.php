@@ -5,8 +5,8 @@ namespace App\Http\Controllers\Movies;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-use App\MoviesInfo;
-use App\Crawlers;
+use App\Model\MoviesInfo;
+use App\Model\Crawlers;
 use App\Libraries\EfikasLib;
 use App\Libraries\MisleanousLib;
 

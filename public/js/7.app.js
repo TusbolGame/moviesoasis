@@ -5,14 +5,14 @@ webpackJsonp([7],{
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_cacheDirectory_true_presets_env_modules_false_targets_browsers_2_uglify_true_node_modules_vue_loader_lib_selector_type_script_index_0_category_vue__ = __webpack_require__(618);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_cacheDirectory_true_presets_env_modules_false_targets_browsers_2_uglify_true_node_modules_vue_loader_lib_selector_type_script_index_0_watchonline_vue__ = __webpack_require__(628);
 /* empty harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_4604b5f8_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_category_vue__ = __webpack_require__(636);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_067af24c_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_watchonline_vue__ = __webpack_require__(656);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__(50);
 var disposed = false
 function injectStyle (context) {
   if (disposed) return
-  __webpack_require__(634)
+  __webpack_require__(654)
 }
 /* script */
 
@@ -24,20 +24,20 @@ var __vue_template_functional__ = false
 /* styles */
 var __vue_styles__ = injectStyle
 /* scopeId */
-var __vue_scopeId__ = "data-v-4604b5f8"
+var __vue_scopeId__ = "data-v-067af24c"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 
 var Component = Object(__WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__["a" /* default */])(
-  __WEBPACK_IMPORTED_MODULE_0__babel_loader_cacheDirectory_true_presets_env_modules_false_targets_browsers_2_uglify_true_node_modules_vue_loader_lib_selector_type_script_index_0_category_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_4604b5f8_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_category_vue__["a" /* render */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_4604b5f8_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_category_vue__["b" /* staticRenderFns */],
+  __WEBPACK_IMPORTED_MODULE_0__babel_loader_cacheDirectory_true_presets_env_modules_false_targets_browsers_2_uglify_true_node_modules_vue_loader_lib_selector_type_script_index_0_watchonline_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_067af24c_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_watchonline_vue__["a" /* render */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_067af24c_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_watchonline_vue__["b" /* staticRenderFns */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/components/mo/category.vue"
+Component.options.__file = "resources/assets/js/components/mo/watchonline.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -46,9 +46,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-4604b5f8", Component.options)
+    hotAPI.createRecord("data-v-067af24c", Component.options)
   } else {
-    hotAPI.reload("data-v-4604b5f8", Component.options)
+    hotAPI.reload("data-v-067af24c", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -60,7 +60,7 @@ if (false) {(function () {
 
 /***/ }),
 
-/***/ 616:
+/***/ 618:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -109,24 +109,12 @@ var mo_mixins = {
 
 /***/ }),
 
-/***/ 618:
+/***/ 628:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(174);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__partials_mixins_mo_mixins__ = __webpack_require__(616);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__partials_mixins_mo_mixins__ = __webpack_require__(618);
 //
 //
 //
@@ -161,47 +149,59 @@ var mo_mixins = {
 /* harmony default export */ __webpack_exports__["a"] = ({
     mixins: [__WEBPACK_IMPORTED_MODULE_1__partials_mixins_mo_mixins__["a" /* mo_mixins */]],
     methods: {
-        flag: function flag(category) {
-            if (category == "christian" || category == "islamic") {
-                return true;
+        videoCategoryLink: function videoCategoryLink(cat) {
+            if (cat == 'religious__muslim') {
+                return 'religious/islamic';
+            } else if (cat == 'religious__christian') {
+                return 'religious/christian';
+            } else {
+                return cat;
             }
-            return false;
+        },
+        videoCategory: function videoCategory(cat) {
+            if (cat == 'religious__muslim') {
+                return 'Islamic';
+            } else if (cat == 'religious__christian') {
+                return 'Christian';
+            } else {
+                return cat;
+            }
         }
     },
     created: function created() {
-        this.$store.dispatch('fetchMoviesByCategory', this.category);
+        this.$store.dispatch('fetchMovieInfo', this.movieId);
     },
     data: function data() {
         return {
-            category: this.$route.params.category_name
+            movieId: this.$route.params.movie_id
         };
     },
 
     computed: Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapGetters */])({
-        movies: 'getMoviesByCategory'
+        movie: 'getMovie'
     })
 });
 
 /***/ }),
 
-/***/ 634:
+/***/ 654:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(635);
+var content = __webpack_require__(655);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
 var add = __webpack_require__(107).default
-var update = add("21821295", content, false, {});
+var update = add("5daf7eb5", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"optionsId\":\"0\",\"vue\":true,\"id\":\"data-v-4604b5f8\",\"scoped\":true,\"sourceMap\":false}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./category.vue", function() {
-     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"optionsId\":\"0\",\"vue\":true,\"id\":\"data-v-4604b5f8\",\"scoped\":true,\"sourceMap\":false}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./category.vue");
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"optionsId\":\"0\",\"vue\":true,\"id\":\"data-v-067af24c\",\"scoped\":true,\"sourceMap\":false}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./watchonline.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"optionsId\":\"0\",\"vue\":true,\"id\":\"data-v-067af24c\",\"scoped\":true,\"sourceMap\":false}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./watchonline.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -212,7 +212,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 635:
+/***/ 655:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(106)(undefined);
@@ -220,14 +220,14 @@ exports = module.exports = __webpack_require__(106)(undefined);
 
 
 // module
-exports.push([module.i, "\n.wrapper[data-v-4604b5f8] {\n    margin-top: 10%;\n    background-color: transparent;\n}\nimg[data-v-4604b5f8] {\n    height: 200px;\n    width: 200px;\n}\n", ""]);
+exports.push([module.i, "\n.wrapper[data-v-067af24c] {\n    margin-top: 10%;\n    background-color: transparent;\n}\nimg[data-v-067af24c] {\n    height: 200px;\n    width: 200px;\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 636:
+/***/ 656:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -237,136 +237,113 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    {},
-    [
-      _c(
-        "section",
-        {
-          staticClass: "content-headerf",
-          staticStyle: {
-            float: "left !important",
-            width: "100%",
-            "margin-top": "20px"
-          }
-        },
-        [
-          _c("ol", { staticClass: "breadcrumb" }, [
+  return _c("div", {}, [
+    !_vm.isObjectEmpty(_vm.movie)
+      ? _c("div", [
+          _c(
+            "section",
+            {
+              staticClass: "content-headerf",
+              staticStyle: {
+                float: "left !important",
+                width: "100%",
+                "margin-top": "20px"
+              }
+            },
+            [
+              _c("ol", { staticClass: "breadcrumb" }, [
+                _vm._m(0),
+                _vm._v(" "),
+                _c("li", [
+                  _c(
+                    "a",
+                    {
+                      attrs: {
+                        href:
+                          "/category/" +
+                          _vm
+                            .videoCategoryLink(_vm.movie.movieDetail.category)
+                            .toLowerCase()
+                      }
+                    },
+                    [
+                      _c("i", { staticClass: "glyphicon glyphicon-expand" }),
+                      _vm._v(
+                        "\n                        " +
+                          _vm._s(
+                            _vm.videoCategory(
+                              _vm.movie.movieDetail.category.toLowerCase()
+                            )
+                          ) +
+                          " Movies\n                    "
+                      )
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "active" }, [
+                  _vm._v(_vm._s(_vm._f("ucWords")(_vm.movie.movieDetail.name)))
+                ])
+              ])
+            ]
+          ),
+          _vm._v(" "),
+          _c("div", { staticClass: "row" }, [
             _c(
-              "li",
-              [
-                _c(
-                  "router-link",
-                  { attrs: { tag: "a", to: { name: "home" } } },
-                  [
-                    _c("i", { staticClass: "glyphicon glyphicon-home" }),
-                    _vm._v(" Home\n                ")
-                  ]
-                )
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _vm.flag(_vm.category.toLowerCase())
-              ? _c(
-                  "li",
-                  [
-                    _c(
-                      "router-link",
-                      {
-                        attrs: {
-                          tag: "a",
-                          to: {
-                            name: "category",
-                            params: { religious: _vm.movie.enc_id }
-                          }
-                        }
-                      },
-                      [
-                        _c("i", { staticClass: "glyphicon glyphicon-star" }),
-                        _vm._v(" Religious\n                ")
-                      ]
-                    )
-                  ],
-                  1
-                )
-              : _vm._e(),
-            _vm._v(" "),
-            _c("li", { staticClass: "active" }, [
-              _vm._v(_vm._s(_vm._f("ucWords")(_vm.category)) + " Movies")
-            ])
-          ])
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        {
-          staticClass: "headings text-center h2",
-          staticStyle: { "margin-top": "80px" }
-        },
-        [
-          _vm._v(
-            "\n        " + _vm._s(_vm._f("ucWords")(_vm.category)) + "\n    "
-          )
-        ]
-      ),
-      _vm._v(" "),
-      _c("div", { staticClass: "topic-row-height text-center" }, [
-        _c(
-          "a",
-          {
-            staticStyle: { color: "red !important", "font-weight": "bold" },
-            attrs: { href: "/" + _vm.category + "/allmovies" }
-          },
-          [
-            _vm._v(
-              "All " + _vm._s(_vm._f("ucWords")(_vm.category)) + " Movies here"
-            )
-          ]
-        )
-      ]),
-      _vm._v(" "),
-      _vm._l(_vm.movies, function(movie, key) {
-        return _c(
-          "div",
-          {
-            staticClass: "topic-row-height text-center",
-            class: key % 2 == 1 ? "" : "row-even"
-          },
-          [
-            _c(
-              "router-link",
+              "div",
               {
-                attrs: {
-                  tag: "a",
-                  to: { name: "movie", params: { movie_id: movie.enc_id } }
-                }
+                staticClass:
+                  "col-xs-12 col-xs-offset-0 col-sm-12 col-sm-offset-0 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1"
               },
               [
-                _vm._v(
-                  "\n            " +
-                    _vm._s(_vm._f("ucWords")(movie.name)) +
-                    "\n        "
-                )
+                _c(
+                  "div",
+                  {
+                    staticClass: "headings text-center h2",
+                    staticStyle: { "margin-top": "40px" }
+                  },
+                  [
+                    _c("strong", [
+                      _vm._v(
+                        " " +
+                          _vm._s(_vm._f("ucWords")(_vm.movie.movieDetail.name))
+                      )
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c("iframe", {
+                  attrs: {
+                    frameborder: "0",
+                    src: _vm.embedVideo(_vm.movie.movieDetail.youlink)
+                  }
+                })
               ]
             )
-          ],
-          1
-        )
-      })
-    ],
-    2
-  )
+          ])
+        ])
+      : _vm._e()
+  ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [
+      _c("a", { attrs: { href: "/" } }, [
+        _c("i", { staticClass: "glyphicon glyphicon-home" }),
+        _vm._v(" Home")
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-4604b5f8", { render: render, staticRenderFns: staticRenderFns })
+    require("vue-hot-reload-api")      .rerender("data-v-067af24c", { render: render, staticRenderFns: staticRenderFns })
   }
 }
 

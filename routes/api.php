@@ -22,8 +22,14 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/bots', ['as'=> 'bots', 'uses'=> 'Admin\BotController@movie']);
+Route::get('/bots', ['as'=> 'bots', 'uses'=> 'Admin\BotController@index']);
 
+
+//API ROUTES
+Route::get('/getmovies/category/{cat}/pagenumber/{num}', 'Admin\MovieController@index');
+Route::get('/getuploads/category/{cat}/pagenumber/{num}', 'ApiController@getMovies');
+//Route::get('/bot/start', 'BotController@start');
+Route::get('/agetbots/pagenumber/{num}', 'ApiController@getBots');
 
 
 
